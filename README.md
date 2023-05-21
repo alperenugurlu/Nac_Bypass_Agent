@@ -1,5 +1,36 @@
 # Nac Bypass Agent
 
+This piece of code is a script written in Python and designed to run on Kali Linux. Here is a summary explaining what each function does:
+
+# run_command(command): 
+This function runs the command it takes as input and returns its output.
+
+# kill_network_services(): 
+This function stops the dhclient and NetworkManager services.
+
+# get_network_info(): 
+This function listens for network traffic using tcpdump and returns the first captured IP and MAC address. If these addresses are not captured, None returns None.
+
+# spoof_ip_address(interface, ip_address, netmask): 
+This function replaces the IP address of the specified network interface with the specified IP address and netmask.
+
+# spoof_mac_address(interface, mac_address): 
+This function replaces the MAC address of the specified network interface with the specified MAC address.
+
+# start_responder(interface): 
+This function starts the responder tool on the specified network interface.
+
+# start_tcpdump(interface): 
+This function starts the tcpdump tool on the specified network interface.
+
+# nbtscan(ip_range): 
+This function runs the nbtscan tool in the specified IP range.
+
+# main(): 
+This function combines all the above functions and takes necessary information from the user to change the IP and MAC address, start the responder and tcpdump tools, and run the nbtscan tool.
+
+All of the above code must be contained in a Python script and the script must be run with root privileges. Because this piece of code contains commands that change the network configuration and tools that listen for network traffic. These operations usually require root privileges. Also, the use of this script may be subject to the law and unauthorized use may lead to legal problems. Therefore, it is important to check local laws and policies before using the script.
+
 ![image](https://github.com/alperenugurlu/Nac_Bypass_Agent/assets/64872731/9ff0e710-706e-4ddc-b4c3-d1b09ab5e39b)
 
 In apt and Ransomware group scenarios, when they infiltrate the enterprise from the outside, it tries to bypass nac security solutions in enterprise structures. If it can achieve this, it starts to discover users in the whole network. It also listens to the network with wireshark or tcpdump. If voip is used in your structure, it can decode all calls over SIP. In the scenario I have described below, it decodes your voip calls over SIP after success.
